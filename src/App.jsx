@@ -48,13 +48,13 @@ import { getAnalytics } from 'firebase/analytics';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: 'AIzaSyChS2qxsehgflf4oBA-7jS5kPoSPZm5BOg',
-  authDomain: 'lunchorder-26584.firebaseapp.com',
-  projectId: 'lunchorder-26584',
-  storageBucket: 'lunchorder-26584.firebasestorage.app',
-  messagingSenderId: '921203881470',
-  appId: '1:921203881470:web:26154c1b45fb6726743caf',
-  measurementId: 'G-YS5QCWHKTX',
+  apiKey: "AIzaSyDLJANlUzGEJoQErILQFWx_ZQmZ21ZoCSw",
+  authDomain: "app-inve-88bf7.firebaseapp.com",
+  projectId: "app-inve-88bf7",
+  storageBucket: "app-inve-88bf7.firebasestorage.app",
+  messagingSenderId: "838030359693",
+  appId: "1:838030359693:web:8ad8c77d5f58bd239c76c4",
+  measurementId: "G-190F3GC71L"
 };
 
 // Initialize Firebase
@@ -173,7 +173,7 @@ export default function LunchOrderApp() {
     const ordersRef = collection(
       db,
       'artifacts',
-      appId,
+      firebaseConfig.appId,
       'public',
       'data',
       'lunch_orders'
@@ -197,7 +197,7 @@ export default function LunchOrderApp() {
     const menuRef = collection(
       db,
       'artifacts',
-      appId,
+      firebaseConfig.appId,
       'public',
       'data',
       'lunch_menu'
@@ -221,7 +221,7 @@ export default function LunchOrderApp() {
     const restRef = collection(
       db,
       'artifacts',
-      appId,
+      firebaseConfig.appId,
       'public',
       'data',
       'restaurants'
@@ -291,7 +291,7 @@ export default function LunchOrderApp() {
       const ordersRef = collection(
         db,
         'artifacts',
-        appId,
+        firebaseConfig.appId,
         'public',
         'data',
         'lunch_orders'
@@ -321,7 +321,7 @@ export default function LunchOrderApp() {
     if (!user || (!isAdmin && user.uid !== orderUserId)) return;
     try {
       await deleteDoc(
-        doc(db, 'artifacts', appId, 'public', 'data', 'lunch_orders', orderId)
+        doc(db, 'artifacts', firebaseConfig.appId, 'public', 'data', 'lunch_orders', orderId)
       );
     } catch (e) {
       console.error(e);
@@ -331,9 +331,10 @@ export default function LunchOrderApp() {
   const handleAddMenuItem = async (e) => {
     e.preventDefault();
     if (!newItem.name || !newItem.price) return;
+    // console.log("Data appId: ", firebaseConfig.appId)
     try {
       await addDoc(
-        collection(db, 'artifacts', appId, 'public', 'data', 'lunch_menu'),
+        collection(db, 'artifacts', firebaseConfig.appId, 'public', 'data', 'lunch_menu'),
         {
           ...newItem,
           price: Number(newItem.price),
@@ -355,7 +356,7 @@ export default function LunchOrderApp() {
     showConfirm('刪除餐點', '確定要刪除這個餐點嗎？', async () => {
       try {
         await deleteDoc(
-          doc(db, 'artifacts', appId, 'public', 'data', 'lunch_menu', id)
+          doc(db, 'artifacts', firebaseConfig.appId, 'public', 'data', 'lunch_menu', id)
         );
         closeModals();
       } catch (e) {
@@ -375,7 +376,7 @@ export default function LunchOrderApp() {
             const ref = doc(
               db,
               'artifacts',
-              appId,
+              firebaseConfig.appId,
               'public',
               'data',
               'lunch_orders',
@@ -409,7 +410,7 @@ export default function LunchOrderApp() {
     if (!inputValue.trim()) return;
     try {
       await addDoc(
-        collection(db, 'artifacts', appId, 'public', 'data', 'restaurants'),
+        collection(db, 'artifacts', firebaseConfig.appId, 'public', 'data', 'restaurants'),
         {
           name: inputValue,
           type: templateType, // 'main' or 'drink'
@@ -450,7 +451,7 @@ export default function LunchOrderApp() {
             const ref = doc(
               db,
               'artifacts',
-              appId,
+              firebaseConfig.appId,
               'public',
               'data',
               'lunch_menu',
@@ -463,7 +464,7 @@ export default function LunchOrderApp() {
         // Add new items
         restaurant.items.forEach((item) => {
           const newRef = doc(
-            collection(db, 'artifacts', appId, 'public', 'data', 'lunch_menu')
+            collection(db, 'artifacts', firebaseConfig.appId, 'public', 'data', 'lunch_menu')
           );
           batch.set(newRef, item);
         });
@@ -485,7 +486,7 @@ export default function LunchOrderApp() {
     showConfirm('刪除餐廳', `確定要從資料庫刪除「${name}」嗎？`, async () => {
       try {
         await deleteDoc(
-          doc(db, 'artifacts', appId, 'public', 'data', 'restaurants', id)
+          doc(db, 'artifacts', firebaseConfig.appId, 'public', 'data', 'restaurants', id)
         );
         closeModals();
       } catch (e) {
