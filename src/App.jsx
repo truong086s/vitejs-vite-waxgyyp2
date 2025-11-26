@@ -531,33 +531,27 @@ export default function LunchOrderApp() {
   // --- Initial Join Screen ---
   if (!hasJoined) {
     return (
-      <div className="min-h-screen bg-orange-50 flex items-center justify-center p-4">
-        <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md border-t-4 border-orange-500">
-          <div className="text-center mb-8">
-            <div className="bg-orange-100 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-              <ShoppingBag className="w-10 h-10 text-orange-600" />
-            </div>
-            <h1 className="text-3xl font-bold text-gray-800">午餐點餐系統</h1>
-            <p className="text-gray-500 mt-2">請輸入您的名字</p>
+       <div className="join-screen">
+      <div className="join-card">
+        <div className="join-header">
+          <div className="join-icon">
+            <ShoppingBag />
           </div>
-          <form onSubmit={handleJoin} className="space-y-4">
-            <input
-              type="text"
-              required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 outline-none"
-              placeholder="例如：Alex"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-            />
-            <button
-              type="submit"
-              className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 rounded-lg shadow"
-            >
-              開始使用
-            </button>
-          </form>
+          <h1>午餐點餐系統</h1>
+          <p>請輸入您的名字</p>
         </div>
+        <form onSubmit={handleJoin} className="join-form">
+          <input
+            type="text"
+            required
+            placeholder="例如：Alex"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+          <button type="submit">開始使用</button>
+        </form>
       </div>
+    </div>
     );
   }
 
@@ -769,53 +763,68 @@ export default function LunchOrderApp() {
         </div>
       )}
 
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8 main">
         {/* === Left Column === */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className="lg:col-span-2 space-y-6 lg-col-span-2-space-y-6">
           {/* View: Restaurant Database (Admin Only) */}
           {isAdmin && activeTab === 'database' && (
-            <div className="animate-fade-in space-y-8">
+            <div className="animate-fade-in space-y-8 fade-in-space-y-8">
               {/* Section 1: Main Course */}
               <div>
-                <h3 className="flex items-center text-lg font-bold text-gray-800 mb-4">
-                  <span className="bg-blue-100 text-blue-800 p-2 rounded-lg mr-2">
+                <h3 className="flex items-center text-lg font-bold text-gray-800 mb-4 flex-items-center-text-lg-font-bold-text-gray-800-mb-4">
+                  <span className="bg-blue-100 text-blue-800 p-2 rounded-lg mr-2 bg-blue-100-text-blue-800-p-2-rounded-lg-mr-2">
                     <Utensils className="w-5 h-5" />
                   </span>
                   主食餐廳 (點擊替換今日菜單)
                 </h3>
                 {mainRestaurants.length === 0 ? (
-                  <div className="text-center py-8 bg-white rounded-xl border border-dashed border-gray-300 text-gray-400">
+                  <div style={{
+                      textAlign: 'center',            /* text-center */
+                      paddingTop: '2rem',             /* py-8 → padding-top */
+                      paddingBottom: '2rem',          /* py-8 → padding-bottom */
+                      backgroundColor: '#ffffff',     /* bg-white */
+                      borderRadius: '0.75rem',        /* rounded-xl */
+                      borderWidth: '1px',             /* border */
+                      borderStyle: 'dashed',          /* border-dashed */
+                      borderColor: '#d1d5db',         /* border-gray-300 */
+                      color: '#9ca3af',               /* text-gray-400 */
+                    }} className="text-center py-8 bg-white rounded-xl border border-dashed border-gray-300 text-gray-400">
                     尚無主食餐廳，請先建立
                   </div>
                 ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div style={{
+  display: 'grid',                  /* grid */
+  gridTemplateColumns: 'repeat(1, minmax(0, 1fr))', /* grid-cols-1 */
+  gap: '1rem',                      /* gap-4 → 1rem */
+
+}} className="grid grid-cols-1 md:grid-cols-2 gap-4 grid-grid-cols-1-md-grid-cols-2-gap-4">
                     {mainRestaurants.map((rest) => (
                       <div
                         key={rest.id}
-                        className="bg-white p-5 rounded-2xl shadow-sm border border-gray-200 hover:border-blue-400 transition group relative"
+                        className="bg-white p-5 rounded-2xl shadow-sm border border-gray-200 hover:border-blue-400 transition group relative card"
                       >
-                        <div className="flex justify-between items-start mb-3">
-                          <h3 className="font-bold text-lg text-gray-800">
+                        <div className="flex justify-between items-start mb-3 flex-justify-between-items-start-mb-3">
+                          <h3 className="font-bold text-lg text-gray-800 font-bold-text-lg-text-gray-800">
                             {rest.name}
                           </h3>
                           <button
                             onClick={() =>
                               handleDeleteTemplate(rest.id, rest.name)
                             }
-                            className="text-gray-400 hover:text-red-500 p-1"
+                            className="text-gray-400 hover:text-red-500 p-1 text-gray-400-hover-text-red-500-p-1"
                           >
                             <Trash2 className="w-4 h-4" />
                           </button>
                         </div>
-                        <p className="text-sm text-gray-500 mb-4 line-clamp-2">
+                        <p className="text-sm text-gray-500 mb-4 line-clamp-2 text-sm-text-gray-500-mb-4-line-clamp-2">
                           {rest.items.map((i) => i.name).join('、')}
                         </p>
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 flex-gap-2">
                           <button
                             onClick={() =>
                               handleApplyTemplate(rest, 'overwrite')
                             }
-                            className="flex-1 bg-blue-50 text-blue-700 hover:bg-blue-100 py-2 rounded-lg font-bold text-sm flex items-center justify-center transition border border-blue-200"
+                            className="flex-1 bg-blue-50 text-blue-700 hover:bg-blue-100 py-2 rounded-lg font-bold text-sm flex items-center justify-center transition border border-blue-200 flex-1-bg-blue-50-text-blue-700-hover-bg-blue-100-py-2-rounded-lg-font-bold-text-sm-flex-items-center-justify-center-transition-border-border-blue-200"
                             title="清空現有菜單並套用此餐廳"
                           >
                             <RefreshCcw className="w-4 h-4 mr-1" />
@@ -823,7 +832,7 @@ export default function LunchOrderApp() {
                           </button>
                           <button
                             onClick={() => handleApplyTemplate(rest, 'append')}
-                            className="w-10 flex items-center justify-center bg-gray-50 hover:bg-gray-100 text-gray-500 rounded-lg border border-gray-200"
+                            className="w-10 flex items-center justify-center bg-gray-50 hover:bg-gray-100 text-gray-500 rounded-lg border border-gray-200 w-10-flex-items-center-justify-center-bg-gray-50-hover-bg-gray-100-text-gray-500-rounded-lg-border-border-gray-200"
                             title="加入至現有菜單 (不清除)"
                           >
                             <Plus className="w-4 h-4" />
@@ -837,43 +846,43 @@ export default function LunchOrderApp() {
 
               {/* Section 2: Drinks */}
               <div>
-                <h3 className="flex items-center text-lg font-bold text-gray-800 mb-4">
-                  <span className="bg-green-100 text-green-800 p-2 rounded-lg mr-2">
+                <h3 className="flex items-center text-lg font-bold text-gray-800 mb-4 flex-items-center-text-lg-font-bold-text-gray-800-mb-4">
+                  <span className="bg-green-100 text-green-800 p-2 rounded-lg mr-2 bg-green-100-text-green-800-p-2-rounded-lg-mr-2">
                     <Coffee className="w-5 h-5" />
                   </span>
                   飲料店家 (點擊加入今日菜單)
                 </h3>
                 {drinkRestaurants.length === 0 ? (
-                  <div className="text-center py-8 bg-white rounded-xl border border-dashed border-gray-300 text-gray-400">
+                  <div className="text-center py-8 bg-white rounded-xl border border-dashed border-gray-300 text-gray-400 text-center-py-8-bg-white-rounded-xl-border-border-dashed-border-gray-300-text-gray-400">
                     尚無飲料店家，請先建立
                   </div>
                 ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 grid-grid-cols-1-md-grid-cols-2-gap-4">
                     {drinkRestaurants.map((rest) => (
                       <div
                         key={rest.id}
-                        className="bg-white p-5 rounded-2xl shadow-sm border border-gray-200 hover:border-green-400 transition group"
+                        className="bg-white p-5 rounded-2xl shadow-sm border border-gray-200 hover:border-green-400 transition group bg-white-p-5-rounded-2xl-shadow-sm-border-border-gray-200-hover-border-green-400-transition-group"
                       >
-                        <div className="flex justify-between items-start mb-3">
-                          <h3 className="font-bold text-lg text-gray-800">
+                        <div className="flex justify-between items-start mb-3 flex-justify-between-items-start-mb-3">
+                          <h3 className="font-bold text-lg text-gray-800 font-bold-text-lg-text-gray-800">
                             {rest.name}
                           </h3>
                           <button
                             onClick={() =>
                               handleDeleteTemplate(rest.id, rest.name)
                             }
-                            className="text-gray-400 hover:text-red-500 p-1"
+                            className="text-gray-400 hover:text-red-500 p-1 text-gray-400-hover-text-red-500-p-1"
                           >
                             <Trash2 className="w-4 h-4" />
                           </button>
                         </div>
-                        <p className="text-sm text-gray-500 mb-4 line-clamp-2">
+                        <p className="text-sm text-gray-500 mb-4 line-clamp-2 text-sm-text-gray-500-mb-4-line-clamp-2">
                           {rest.items.map((i) => i.name).join('、')}
                         </p>
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 flex-gap-2">
                           <button
                             onClick={() => handleApplyTemplate(rest, 'append')}
-                            className="flex-1 bg-green-50 text-green-700 hover:bg-green-100 py-2 rounded-lg font-bold text-sm flex items-center justify-center transition border border-green-200"
+                            className="flex-1 bg-green-50 text-green-700 hover:bg-green-100 py-2 rounded-lg font-bold text-sm flex items-center justify-center transition border border-green-200 flex-1-bg-green-50-text-green-700-hover-bg-green-100-py-2-rounded-lg-font-bold-text-sm-flex-items-center-justify-center-transition-border-border-green-200"
                             title="加入至現有菜單 (不清除)"
                           >
                             <PlusCircle className="w-4 h-4 mr-1" />
@@ -883,7 +892,7 @@ export default function LunchOrderApp() {
                             onClick={() =>
                               handleApplyTemplate(rest, 'overwrite')
                             }
-                            className="w-10 flex items-center justify-center bg-gray-50 hover:bg-gray-100 text-gray-500 rounded-lg border border-gray-200"
+                            className="w-10 flex items-center justify-center bg-gray-50 hover:bg-gray-100 text-gray-500 rounded-lg border border-gray-200 w-10-flex-items-center-justify-center-bg-gray-50-hover-bg-gray-100-text-gray-500-rounded-lg-border-border-gray-200"
                             title="清空現有菜單並套用此餐廳"
                           >
                             <RefreshCcw className="w-4 h-4" />
