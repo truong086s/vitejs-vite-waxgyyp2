@@ -86,18 +86,18 @@ const getIcon = (type, className = 'w-6 h-6') => {
 const Modal = ({ isOpen, title, children, onClose }) => {
   if (!isOpen) return null;
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 animate-fade-in">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all scale-100">
-        <div className="bg-gray-50 px-6 py-4 border-b border-gray-100 flex justify-between items-center">
-          <h3 className="font-bold text-gray-800">{title}</h3>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 animate-fade-in div77">
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all scale-100 div78">
+        <div className="bg-gray-50 px-6 py-4 border-b border-gray-100 flex justify-between items-center div79">
+          <h3 className="font-bold text-gray-800 div80">{title}</h3>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600"
+            className="text-gray-400 hover:text-gray-600 div81"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
-        <div className="p-6">{children}</div>
+        <div className="p-6 div82">{children}</div>
       </div>
     </div>
   );
@@ -570,11 +570,11 @@ export default function LunchOrderApp() {
       >
         {/* Type: Message */}
         {modalConfig.type === 'message' && (
-          <div className="space-y-4">
-            <p className="text-gray-600">{modalConfig.message}</p>
+          <div className="space-y-4 div83">
+            <p className="text-gray-600 div84">{modalConfig.message}</p>
             <button
               onClick={closeModals}
-              className="w-full bg-blue-600 text-white py-2 rounded-lg"
+              className="w-full bg-blue-600 text-white py-2 rounded-lg div85"
             >
               確定
             </button>
@@ -583,20 +583,20 @@ export default function LunchOrderApp() {
 
         {/* Type: Confirm */}
         {modalConfig.type === 'confirm' && (
-          <div className="space-y-4">
-            <p className="text-gray-600 whitespace-pre-line">
+          <div className="space-y-4 div86">
+            <p className="text-gray-600 whitespace-pre-line div87">
               {modalConfig.message}
             </p>
-            <div className="flex space-x-3">
+            <div className="flex space-x-3 div88">
               <button
                 onClick={closeModals}
-                className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg"
+                className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg div89"
               >
                 取消
               </button>
               <button
                 onClick={modalConfig.onConfirm}
-                className="flex-1 bg-blue-600 text-white py-2 rounded-lg"
+                className="flex-1 bg-blue-600 text-white py-2 rounded-lg div90"
               >
                 確定
               </button>
@@ -606,14 +606,14 @@ export default function LunchOrderApp() {
 
         {/* Type: Save Restaurant (Custom Form) */}
         {modalConfig.type === 'save_restaurant' && (
-          <div className="space-y-4">
+          <div className="space-y-4 div91">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1 div92">
                 餐廳名稱
               </label>
               <input
                 type="text"
-                className="w-full border p-2 rounded focus:ring-2 focus:ring-blue-500 outline-none"
+                className="w-full border p-2 rounded focus:ring-2 focus:ring-blue-500 outline-none div93"
                 placeholder="例如：八方雲集"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
@@ -621,20 +621,20 @@ export default function LunchOrderApp() {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2 div94">
                 分類 (影響預設操作)
               </label>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 div95">
                 <label
                   className={`flex-1 cursor-pointer border rounded-lg p-3 flex items-center justify-center transition ${
                     templateType === 'main'
-                      ? 'bg-blue-50 border-blue-500 text-blue-700'
-                      : 'hover:bg-gray-50'
+                      ? 'bg-blue-50 border-blue-500 text-blue-700 div96'
+                      : 'hover:bg-gray-50 div97'
                   }`}
                 >
                   <input
                     type="radio"
-                    className="hidden"
+                    className="hidden div98"
                     checked={templateType === 'main'}
                     onChange={() => setTemplateType('main')}
                   />
@@ -644,13 +644,13 @@ export default function LunchOrderApp() {
                 <label
                   className={`flex-1 cursor-pointer border rounded-lg p-3 flex items-center justify-center transition ${
                     templateType === 'drink'
-                      ? 'bg-green-50 border-green-500 text-green-700'
-                      : 'hover:bg-gray-50'
+                      ? 'bg-green-50 border-green-500 text-green-700 div99'
+                      : 'hover:bg-gray-50 div100'
                   }`}
                 >
                   <input
                     type="radio"
-                    className="hidden"
+                    className="hidden div98"
                     checked={templateType === 'drink'}
                     onChange={() => setTemplateType('drink')}
                   />
@@ -659,17 +659,17 @@ export default function LunchOrderApp() {
                 </label>
               </div>
             </div>
-            <div className="flex space-x-3 mt-4">
+            <div className="flex space-x-3 mt-4 div101">
               <button
                 onClick={closeModals}
-                className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg"
+                className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg div102"
               >
                 取消
               </button>
               <button
                 onClick={confirmSaveTemplate}
                 disabled={!inputValue.trim()}
-                className="flex-1 bg-blue-600 text-white py-2 rounded-lg disabled:bg-gray-300"
+                className="flex-1 bg-blue-600 text-white py-2 rounded-lg disabled:bg-gray-300 div103"
               >
                 儲存
               </button>
@@ -681,41 +681,41 @@ export default function LunchOrderApp() {
       {/* Header */}
       <header
         className={`${
-          isAdmin ? 'bg-slate-800 text-white' : 'bg-white text-gray-800'
+          isAdmin ? 'bg-slate-800 text-white div104' : 'bg-white text-gray-800 div105'
         } shadow-sm sticky top-0 z-20 transition-colors duration-300`}
       >
-        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between div106">
+          <div className="flex items-center space-x-2 div107">
             <ShoppingBag
               className={`w-6 h-6 ${
-                isAdmin ? 'text-blue-400' : 'text-orange-600'
+                isAdmin ? 'text-blue-400 div108' : 'text-orange-600 div109'
               }`}
             />
-            <h1 className="text-xl font-bold hidden sm:block">
+            <h1 className="text-xl font-bold hidden sm:block div110">
               {isAdmin ? '管理者後台' : '午餐點餐小幫手'}
             </h1>
           </div>
-          <div className="flex items-center space-x-3 sm:space-x-4">
+          <div className="flex items-center space-x-3 sm:space-x-4 div111">
             <span
               className={`px-3 py-1 rounded-full text-sm ${
                 isAdmin
-                  ? 'bg-slate-700 text-gray-300'
-                  : 'bg-gray-100 text-gray-600'
+                  ? 'bg-slate-700 text-gray-300 div112'
+                  : 'bg-gray-100 text-gray-600 div113'
               }`}
             >
-              <User className="w-4 h-4 inline mr-1" />
+              <User className="w-4 h-4 inline mr-1 div114" />
               {userName}
             </span>
             <button
               onClick={() => setIsAdmin(!isAdmin)}
               className={`p-2 rounded-full transition ${
                 isAdmin
-                  ? 'bg-blue-600 text-white hover:bg-blue-500'
-                  : 'text-gray-400 hover:bg-gray-100'
+                  ? 'bg-blue-600 text-white hover:bg-blue-500 div115'
+                  : 'text-gray-400 hover:bg-gray-100 div116'
               }`}
               title="切換管理者模式"
             >
-              <Settings className="w-5 h-5" />
+              <Settings className="w-5 h-5 div125" />
             </button>
             <button
               onClick={() => {
@@ -725,7 +725,7 @@ export default function LunchOrderApp() {
                 setCart([]);
                 setIsAdmin(false);
               }}
-              className="text-sm opacity-60 hover:opacity-100"
+              className="text-sm opacity-60 hover:opacity-100 div117"
             >
               登出
             </button>
@@ -735,28 +735,28 @@ export default function LunchOrderApp() {
 
       {/* Admin Tabs */}
       {isAdmin && (
-        <div className="bg-white border-b border-gray-200 sticky top-16 z-10 shadow-sm">
-          <div className="max-w-7xl mx-auto flex">
+        <div className="bg-white border-b border-gray-200 sticky top-16 z-10 shadow-sm div118">
+          <div className="max-w-7xl mx-auto flex div119">
             <button
               onClick={() => setActiveTab('today')}
               className={`flex-1 py-3 text-center font-medium border-b-2 transition ${
                 activeTab === 'today'
-                  ? 'border-blue-600 text-blue-600 bg-blue-50'
-                  : 'border-transparent text-gray-500 hover:text-gray-700'
+                  ? 'border-blue-600 text-blue-600 bg-blue-50 div120'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 div121'
               }`}
             >
-              <LayoutGrid className="w-4 h-4 inline mr-2" />
+              <LayoutGrid className="w-4 h-4 inline mr-2 div122" />
               今日菜單管理
             </button>
             <button
               onClick={() => setActiveTab('database')}
               className={`flex-1 py-3 text-center font-medium border-b-2 transition ${
                 activeTab === 'database'
-                  ? 'border-blue-600 text-blue-600 bg-blue-50'
-                  : 'border-transparent text-gray-500 hover:text-gray-700'
+                  ? 'border-blue-600 text-blue-600 bg-blue-50 div123'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 div124'
               }`}
             >
-              <Database className="w-4 h-4 inline mr-2" />
+              <Database className="w-4 h-4 inline mr-2 div122" />
               餐廳資料庫 ({restaurants.length})
             </button>
           </div>
@@ -1225,13 +1225,13 @@ export default function LunchOrderApp() {
                         <p className="font-medium text-gray-800 text-sm div72">
                           {order.itemName}
                         </p>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-gray-500 div73">
                           {order.userName}
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <span className="font-bold text-gray-700 text-sm">
+                    <div className="flex items-center space-x-3 div74">
+                      <span className="font-bold text-gray-700 text-sm div75">
                         ${order.price}
                       </span>
                       {(isAdmin || order.userId === user?.uid) && (
@@ -1239,7 +1239,7 @@ export default function LunchOrderApp() {
                           onClick={() =>
                             handleDeleteOrder(order.id, order.userId)
                           }
-                          className="text-red-400 hover:text-red-600 p-1 rounded-full hover:bg-red-50 transition"
+                          className="text-red-400 hover:text-red-600 p-1 rounded-full hover:bg-red-50 transition div76"
                           title="刪除"
                         >
                           <Trash2 className="w-4 h-4" />
