@@ -559,7 +559,7 @@ export default function LunchOrderApp() {
   return (
     <div
       className={`min-h-screen flex flex-col ${
-        isAdmin ? 'bg-slate-50' : 'bg-gray-50'
+        isAdmin ? 'bg-slate-50 div126' : 'bg-gray-50 div127'
       }`}
     >
       {/* --- Global Modals --- */}

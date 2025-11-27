@@ -2777,3 +2777,27 @@ button:focus-visible {
   height: 1.25rem;
   /* h-5 = 20px */
 }
+
+.div126 {
+  min-width: 100vw;
+  min-height: 100vh;
+  /* min-h-screen */
+  display: flex;
+  /* flex */
+  flex-direction: column;
+  /* flex-col */
+  background-color: #f8fafc;
+  /* bg-slate-50 */
+}
+
+.div127 {
+  min-width: 100vw;
+  min-height: 100vh;
+  /* min-h-screen */
+  display: flex;
+  /* flex */
+  flex-direction: column;
+  /* flex-col */
+  background-color: #f9fafb;
+  /* bg-gray-50 */
+}
