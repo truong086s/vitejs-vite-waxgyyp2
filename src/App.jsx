@@ -911,22 +911,22 @@ export default function LunchOrderApp() {
             <>
               {/* Admin Menu Tools */}
               {isAdmin && (
-                <div className="bg-white p-4 rounded-2xl shadow-sm border border-blue-200 flex flex-wrap gap-3 items-center justify-between">
-                  <div className="flex items-center text-blue-800 font-bold">
+                <div className="bg-white p-4 rounded-2xl shadow-sm border border-blue-200 flex flex-wrap gap-3 items-center justify-between div1">
+                  <div className="flex items-center text-blue-800 font-bold div2">
                     <Edit2 className="w-5 h-5 mr-2" />
                     今日菜單編輯
                   </div>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-2 div3">
                     <button
                       onClick={handleSaveAsTemplate}
-                      className="bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-lg text-sm font-medium flex items-center shadow-sm"
+                      className="bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-lg text-sm font-medium flex items-center shadow-sm div4"
                     >
                       <Save className="w-4 h-4 mr-1" />
                       另存為餐廳
                     </button>
                     <button
                       onClick={() => setIsEditingMenu(!isEditingMenu)}
-                      className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm font-medium flex items-center shadow-sm"
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm font-medium flex items-center shadow-sm div5"
                     >
                       <Plus className="w-4 h-4 mr-1" />
                       新增單品
@@ -937,17 +937,17 @@ export default function LunchOrderApp() {
 
               {/* Add Item Form */}
               {isAdmin && isEditingMenu && (
-                <div className="bg-white p-6 rounded-2xl shadow-lg border border-blue-100 animate-fade-in">
-                  <h3 className="font-bold text-gray-800 mb-4">新增今日單品</h3>
+                <div className="bg-white p-6 rounded-2xl shadow-lg border border-blue-100 animate-fade-in div6">
+                  <h3 className="font-bold text-gray-800 mb-4 div7">新增今日單品</h3>
                   <form
                     onSubmit={handleAddMenuItem}
-                    className="grid grid-cols-1 sm:grid-cols-4 gap-4"
+                    className="grid grid-cols-1 sm:grid-cols-4 gap-4 div8"
                   >
                     <input
                       type="text"
                       placeholder="餐點名稱"
                       required
-                      className="border p-2 rounded sm:col-span-2"
+                      className="border p-2 rounded sm:col-span-2 div9"
                       value={newItem.name}
                       onChange={(e) =>
                         setNewItem({ ...newItem, name: e.target.value })
@@ -957,14 +957,14 @@ export default function LunchOrderApp() {
                       type="number"
                       placeholder="價格"
                       required
-                      className="border p-2 rounded"
+                      className="border p-2 rounded div10"
                       value={newItem.price}
                       onChange={(e) =>
                         setNewItem({ ...newItem, price: e.target.value })
                       }
                     />
                     <select
-                      className="border p-2 rounded"
+                      className="border p-2 rounded div10"
                       value={newItem.category}
                       onChange={(e) =>
                         setNewItem({ ...newItem, category: e.target.value })
@@ -974,17 +974,17 @@ export default function LunchOrderApp() {
                       <option value="飲料">飲料</option>
                       <option value="點心">點心</option>
                     </select>
-                    <div className="sm:col-span-4 flex justify-end space-x-2">
+                    <div className="sm:col-span-4 flex justify-end space-x-2 div11">
                       <button
                         type="button"
                         onClick={() => setIsEditingMenu(false)}
-                        className="px-4 py-2 text-gray-500"
+                        className="px-4 py-2 text-gray-500 div12"
                       >
                         取消
                       </button>
                       <button
                         type="submit"
-                        className="bg-blue-600 text-white px-6 py-2 rounded-lg"
+                        className="bg-blue-600 text-white px-6 py-2 rounded-lg div13"
                       >
                         新增
                       </button>
@@ -994,36 +994,36 @@ export default function LunchOrderApp() {
               )}
 
               {/* Menu Grid */}
-              <div className="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 min-h-[200px]">
-                <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center">
+              <div className="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 min-h-[200px] div14">
+                <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center div15">
                   <Utensils className="w-5 h-5 mr-2 text-orange-500" />
                   {isAdmin ? '今日供應菜單' : '今日菜單'}
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 div16">
                   {menuItems.map((item) => (
                     <div
                       key={item.id}
-                      className="relative flex items-center justify-between p-4 rounded-xl border border-gray-200 hover:border-orange-500 hover:shadow-md hover:bg-orange-50 transition group bg-white"
+                      className="relative flex items-center justify-between p-4 rounded-xl border border-gray-200 hover:border-orange-500 hover:shadow-md hover:bg-orange-50 transition group bg-white div17"
                     >
                       <button
                         onClick={() => !isAdmin && addToCart(item)}
-                        className="flex-1 flex items-center justify-between text-left w-full"
+                        className="flex-1 flex items-center justify-between text-left w-full div18"
                         disabled={isAdmin}
                       >
-                        <div className="flex items-center space-x-3">
-                          <div className="bg-gray-100 p-2 rounded-lg group-hover:bg-white transition">
+                        <div className="flex items-center space-x-3 div19">
+                          <div className="bg-gray-100 p-2 rounded-lg group-hover:bg-white transition div20">
                             {getIcon(item.iconType)}
                           </div>
                           <div>
-                            <h3 className="font-semibold text-gray-800">
+                            <h3 className="font-semibold text-gray-800 div21">
                               {item.name}
                             </h3>
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-gray-500 div22">
                               {item.category}
                             </p>
                           </div>
                         </div>
-                        <span className="font-bold text-gray-900 mr-2">
+                        <span className="font-bold text-gray-900 mr-2 div23">
                           ${item.price}
                         </span>
                       </button>
@@ -1031,14 +1031,14 @@ export default function LunchOrderApp() {
                       {isAdmin ? (
                         <button
                           onClick={() => handleDeleteMenuItem(item.id)}
-                          className="ml-2 p-2 text-red-400 hover:bg-red-50 rounded-full hover:text-red-600"
+                          className="ml-2 p-2 text-red-400 hover:bg-red-50 rounded-full hover:text-red-600 div24"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
                       ) : (
                         <button
                           onClick={() => addToCart(item)}
-                          className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-orange-500 hover:text-white transition"
+                          className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-orange-500 hover:text-white transition div25"
                         >
                           <Plus className="w-5 h-5" />
                         </button>
@@ -1046,12 +1046,12 @@ export default function LunchOrderApp() {
                     </div>
                   ))}
                   {menuItems.length === 0 && (
-                    <div className="col-span-full text-center py-10">
-                      <p className="text-gray-400 mb-2">今日菜單尚未建立</p>
+                    <div className="col-span-full text-center py-10 div26">
+                      <p className="text-gray-400 mb-2 div27">今日菜單尚未建立</p>
                       {isAdmin && (
                         <button
                           onClick={() => setActiveTab('database')}
-                          className="text-blue-600 hover:underline"
+                          className="text-blue-600 hover:underline div28"
                         >
                           去資料庫選一家餐廳 &rarr;
                         </button>
@@ -1062,38 +1062,38 @@ export default function LunchOrderApp() {
               </div>
 
               {/* Stats Block */}
-              <div className="hidden lg:block bg-white rounded-2xl shadow-sm p-6 border border-gray-100">
-                <div className="flex justify-between items-center mb-4">
-                  <h2 className="text-lg font-bold text-gray-800">統計總覽</h2>
+              <div className="hidden lg:block bg-white rounded-2xl shadow-sm p-6 border border-gray-100 div29">
+                <div className="flex justify-between items-center mb-4 div30">
+                  <h2 className="text-lg font-bold text-gray-800 div31">統計總覽</h2>
                   {isAdmin && (
                     <button
                       onClick={handleCopySummary}
-                      className="text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-lg flex items-center transition"
+                      className="text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-lg flex items-center transition div32"
                     >
                       <Copy className="w-4 h-4 mr-1" />
                       複製摘要
                     </button>
                   )}
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4 div33">
                   {Object.entries(groupedOrders).map(([name, stats]) => (
                     <div
                       key={name}
-                      className="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
+                      className="flex justify-between items-center p-3 bg-gray-50 rounded-lg div34"
                     >
-                      <span className="font-medium text-gray-700">{name}</span>
-                      <div className="flex items-center space-x-2">
-                        <span className="text-sm text-gray-500">
+                      <span className="font-medium text-gray-700 div35">{name}</span>
+                      <div className="flex items-center space-x-2 div36">
+                        <span className="text-sm text-gray-500 div37">
                           x{stats.count}
                         </span>
-                        <span className="font-bold text-gray-900">
+                        <span className="font-bold text-gray-900 div38">
                           ${stats.price * stats.count}
                         </span>
                       </div>
                     </div>
                   ))}
                   {orders.length === 0 && (
-                    <p className="text-gray-400 text-sm">尚無訂單</p>
+                    <p className="text-gray-400 text-sm div39">尚無訂單</p>
                   )}
                 </div>
               </div>
@@ -1102,31 +1102,31 @@ export default function LunchOrderApp() {
         </div>
 
         {/* === Right Column: Cart & Live Orders === */}
-        <div className="lg:col-span-1 space-y-6">
+        <div className="lg:col-span-1 space-y-6 div40">
           {/* User: Cart */}
           {!isAdmin && cart.length > 0 && (
-            <div className="bg-white rounded-2xl shadow-lg border-2 border-orange-500 overflow-hidden animate-fade-in">
-              <div className="p-4 bg-orange-50 border-b border-orange-100 flex justify-between items-center">
-                <h2 className="font-bold text-orange-800 flex items-center">
+            <div className="bg-white rounded-2xl shadow-lg border-2 border-orange-500 overflow-hidden animate-fade-in div41">
+              <div className="p-4 bg-orange-50 border-b border-orange-100 flex justify-between items-center div42">
+                <h2 className="font-bold text-orange-800 flex items-center div43">
                   <CheckCircle className="w-5 h-5 mr-2" />
                   準備下單
                 </h2>
-                <span className="text-orange-600 font-bold">${cartTotal}</span>
+                <span className="text-orange-600 font-bold div44">${cartTotal}</span>
               </div>
-              <div className="p-4 space-y-2">
+              <div className="p-4 space-y-2 div45">
                 {cart.map((item) => (
                   <div
                     key={item.tempId}
-                    className="flex justify-between items-center text-sm py-2 border-b border-gray-50 last:border-0"
+                    className="flex justify-between items-center text-sm py-2 border-b border-gray-50 last:border-0 div46"
                   >
-                    <span className="text-gray-700">{item.name}</span>
-                    <div className="flex items-center space-x-3">
-                      <span className="font-medium text-gray-900">
+                    <span className="text-gray-700 div47">{item.name}</span>
+                    <div className="flex items-center space-x-3 div48">
+                      <span className="font-medium text-gray-900 div49">
                         ${item.price}
                       </span>
                       <button
                         onClick={() => removeFromCart(item.tempId)}
-                        className="text-gray-400 hover:text-red-500"
+                        className="text-gray-400 hover:text-red-500 div50"
                       >
                         <X className="w-4 h-4" />
                       </button>
@@ -1136,7 +1136,7 @@ export default function LunchOrderApp() {
                 <button
                   onClick={submitOrder}
                   disabled={isSubmitting}
-                  className="w-full mt-4 bg-orange-600 hover:bg-orange-700 disabled:bg-gray-300 text-white font-bold py-3 rounded-xl shadow-md transition flex items-center justify-center space-x-2"
+                  className="w-full mt-4 bg-orange-600 hover:bg-orange-700 disabled:bg-gray-300 text-white font-bold py-3 rounded-xl shadow-md transition flex items-center justify-center space-x-2 div51"
                 >
                   {isSubmitting ? (
                     <span>處理中...</span>
@@ -1153,21 +1153,21 @@ export default function LunchOrderApp() {
 
           {/* Admin: Global Controls */}
           {isAdmin && (
-            <div className="bg-white rounded-2xl shadow border border-red-100 p-4">
-              <h3 className="font-bold text-gray-800 mb-3 flex items-center">
+            <div className="bg-white rounded-2xl shadow border border-red-100 p-4 div52">
+              <h3 className="font-bold text-gray-800 mb-3 flex items-center div53">
                 <Settings className="w-5 h-5 mr-2 text-gray-500" />
                 訂單管理
               </h3>
-              <div className="space-y-3">
+              <div className="space-y-3 div54">
                 <button
                   onClick={handleCopySummary}
-                  className="w-full bg-blue-50 text-blue-600 hover:bg-blue-100 py-2 rounded-lg font-medium text-sm flex items-center justify-center"
+                  className="w-full bg-blue-50 text-blue-600 hover:bg-blue-100 py-2 rounded-lg font-medium text-sm flex items-center justify-center div55"
                 >
                   <Copy className="w-4 h-4 mr-2" /> 複製訂單摘要 (給店家)
                 </button>
                 <button
                   onClick={handleClearAllOrders}
-                  className="w-full bg-white border border-red-200 text-red-600 hover:bg-red-50 py-2 rounded-lg font-medium text-sm flex items-center justify-center"
+                  className="w-full bg-white border border-red-200 text-red-600 hover:bg-red-50 py-2 rounded-lg font-medium text-sm flex items-center justify-center div56"
                 >
                   <Trash2 className="w-4 h-4 mr-2" /> 清空今日所有訂單 (重置)
                 </button>
@@ -1176,29 +1176,29 @@ export default function LunchOrderApp() {
           )}
 
           {/* Live Orders Feed */}
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col max-h-[60vh] lg:max-h-[calc(100vh-16rem)] sticky top-24">
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col max-h-[60vh] lg:max-h-[calc(100vh-16rem)] sticky top-24 div57">
             <div
               className={`p-4 ${
                 isAdmin ? 'bg-slate-700' : 'bg-gray-800'
-              } text-white flex justify-between items-center transition-colors`}
+              } text-white flex justify-between items-center transition-colors div58`}
             >
-              <h2 className="font-bold flex items-center">
+              <h2 className="font-bold flex items-center div59">
                 <ShoppingBag className="w-5 h-5 mr-2" />
                 訂單列表 ({orders.length})
               </h2>
-              <div className="text-right">
-                <p className="text-xs opacity-70">總金額</p>
-                <p className="font-bold text-lg">${totalAmount}</p>
+              <div className="text-right div60">
+                <p className="text-xs opacity-70 div61">總金額</p>
+                <p className="font-bold text-lg div62">${totalAmount}</p>
               </div>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-4 space-y-3">
+            <div className="flex-1 overflow-y-auto p-4 space-y-3 div63">
               {loading ? (
-                <div className="flex justify-center py-8">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500"></div>
+                <div className="flex justify-center py-8 div64">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500 div65"></div>
                 </div>
               ) : orders.length === 0 ? (
-                <div className="text-center py-10 text-gray-400">
+                <div className="text-center py-10 text-gray-400 div66">
                   <p>目前還沒有訂單</p>
                 </div>
               ) : (
@@ -1207,22 +1207,22 @@ export default function LunchOrderApp() {
                     key={order.id}
                     className={`flex items-center justify-between p-3 rounded-lg border ${
                       order.userId === user?.uid
-                        ? 'bg-orange-50 border-orange-200'
-                        : 'bg-white border-gray-100'
+                        ? 'bg-orange-50 border-orange-200 div67'
+                        : 'bg-white border-gray-100 div68'
                     }`}
                   >
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-3 div69">
                       <div
                         className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
                           order.userId === user?.uid
-                            ? 'bg-orange-200 text-orange-700'
-                            : 'bg-gray-200 text-gray-600'
+                            ? 'bg-orange-200 text-orange-700 div70'
+                            : 'bg-gray-200 text-gray-600 div71'
                         }`}
                       >
                         {order.userName.charAt(0)}
                       </div>
                       <div>
-                        <p className="font-medium text-gray-800 text-sm">
+                        <p className="font-medium text-gray-800 text-sm div72">
                           {order.itemName}
                         </p>
                         <p className="text-xs text-gray-500">

@@ -759,6 +759,1177 @@ button:focus-visible {
   /* hover:bg-green-100 */
 }
 
-/*
-  w-10 flex items-center justify-center bg-gray-50 hover:bg-gray-100 text-gray-500 rounded-lg border border-gray-200
-*/
+.div1 {
+  background-color: #ffffff;
+  /* bg-white */
+  padding: 1rem;
+  /* p-4 (16px) */
+  border-radius: 1rem;
+  /* rounded-2xl (16px) */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  /* shadow-sm */
+  border: 1px solid #bfdbfe;
+  /* border-blue-200 */
+
+  display: flex;
+  /* flex */
+  flex-wrap: wrap;
+  /* flex-wrap */
+  gap: 0.75rem;
+  /* gap-3 (12px) */
+  align-items: center;
+  /* items-center */
+  justify-content: space-between;
+  /* justify-between */
+}
+
+.div2 {
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  color: #1e40af;
+  /* text-blue-800 */
+  font-weight: 700;
+  /* font-bold */
+}
+
+.div3 {
+  display: flex;
+  /* flex */
+}
+
+.box>*+* {
+  margin-left: 0.5rem;
+  /* space-x-2 → 0.5rem = 8px */
+}
+
+.div4 {
+  background-color: #16a34a;
+  /* bg-green-600 */
+  color: #ffffff;
+  /* text-white */
+  padding-left: 0.75rem;
+  /* px-3 */
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  /* py-2 */
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  /* rounded-lg */
+  font-size: 0.875rem;
+  /* text-sm */
+  font-weight: 500;
+  /* font-medium */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  /* shadow-sm */
+  transition: background-color 0.2s ease;
+  /* hover mượt hơn */
+}
+
+.div4:hover {
+  background-color: #15803d;
+  /* hover:bg-green-700 */
+}
+
+.div5 {
+  background-color: #2563eb;
+  /* bg-blue-600 */
+  color: #ffffff;
+  /* text-white */
+  padding-left: 0.75rem;
+  /* px-3 */
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  /* py-2 */
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  /* rounded-lg */
+  font-size: 0.875rem;
+  /* text-sm */
+  font-weight: 500;
+  /* font-medium */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+
+  /* shadow-sm */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+  /* Chuyển động cho hover */
+  transition: background-color 0.2s ease;
+}
+
+.div5:hover {
+  background-color: #1d4ed8;
+  /* hover:bg-blue-700 */
+}
+
+
+.div6 {
+  background-color: #ffffff;
+  /* bg-white */
+
+  padding: 1.5rem;
+  /* p-6 (24px) */
+
+  border: 1px solid #dbeafe;
+  /* border + border-blue-100 */
+
+  border-radius: 1rem;
+  /* rounded-2xl */
+
+  /* shadow-lg */
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+  animation: fade-in 0.4s ease-out forwards;
+  /* animate-fade-in */
+}
+
+/* Hiệu ứng fade-in tương đương Tailwind */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.div7 {
+  font-weight: 700;
+  /* font-bold */
+  color: #1F2937;
+  /* text-gray-800 */
+  margin-bottom: 1rem;
+  /* mb-4 (16px) */
+}
+
+.div8 {
+  display: grid;
+  /* grid */
+  grid-template-columns: repeat(1, 1fr);
+  /* grid-cols-1 */
+  gap: 1rem;
+  /* gap-4 = 16px */
+}
+
+/* Responsive cho sm: (min-width: 640px) */
+@media (min-width: 640px) {
+  .div8 {
+    grid-template-columns: repeat(4, 1fr);
+    /* sm:grid-cols-4 */
+  }
+}
+
+
+.div9 {
+  border: 1px solid #d1d5db;
+  /* border (mặc định màu gray-300 trong Tailwind) */
+  padding: 0.5rem;
+  /* p-2 = 8px */
+  border-radius: 0.25rem;
+  /* rounded = 4px */
+}
+
+/* Responsive: sm:col-span-2 (>= 640px) */
+@media (min-width: 640px) {
+  .div9 {
+    grid-column: span 2 / span 2;
+    /* chiếm 2 cột trong grid */
+  }
+}
+
+.div10 {
+  border: 1px solid #d1d5db;
+  /* border = 1px solid, màu xám (gray-300) */
+  padding: 0.5rem;
+  /* p-2 = 8px */
+  border-radius: 0.25rem;
+  /* rounded = 4px */
+}
+
+/* Áp dụng cho màn hình >= 640px (sm:col-span-4) */
+@media (min-width: 640px) {
+  .div11 {
+    grid-column: span 4 / span 4;
+    /* chiếm 4 cột */
+  }
+}
+
+/* flex */
+.div11 {
+  display: flex;
+  justify-content: flex-end;
+  /* căn phải */
+  gap: 0.5rem;
+  /* space-x-2 = 8px khoảng cách ngang giữa các phần tử con */
+}
+
+.div12 {
+  padding-left: 1rem;
+  /* px-4 */
+  padding-right: 1rem;
+  /* px-4 */
+  padding-top: 0.5rem;
+  /* py-2 */
+  padding-bottom: 0.5rem;
+  /* py-2 */
+  color: #6b7280;
+  /* text-gray-500 */
+}
+
+.div13 {
+  background-color: #2563eb;
+  /* bg-blue-600 */
+  color: #ffffff;
+  /* text-white */
+  padding-left: 1.5rem;
+  /* px-6 */
+  padding-right: 1.5rem;
+  /* px-6 */
+  padding-top: 0.5rem;
+  /* py-2 */
+  padding-bottom: 0.5rem;
+  /* py-2 */
+  border-radius: 0.5rem;
+  /* rounded-lg */
+}
+
+
+.div14 {
+  background-color: #ffffff;
+  /* bg-white */
+  border-radius: 1rem;
+  /* rounded-2xl */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  /* shadow-sm */
+  padding: 1.5rem;
+  /* p-6 */
+  border: 1px solid #f3f4f6;
+  /* border + border-gray-100 */
+  min-height: 200px;
+  /* min-h-[200px] */
+}
+
+.div15 {
+  font-size: 1.125rem;
+  /* text-lg → 18px */
+  font-weight: 700;
+  /* font-bold */
+  color: #1f2937;
+  /* text-gray-800 */
+  margin-bottom: 1rem;
+  /* mb-4 → 16px */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+}
+
+.div16 {
+  display: grid;
+  /* grid */
+  grid-template-columns: repeat(1, 1fr);
+  /* grid-cols-1 */
+  gap: 1rem;
+  /* gap-4 → 16px */
+}
+
+/* Responsive cho màn hình ≥ 640px (sm) */
+@media (min-width: 640px) {
+  .div16 {
+    grid-template-columns: repeat(2, 1fr);
+    /* sm:grid-cols-2 */
+  }
+}
+
+.div17 {
+  position: relative;
+  /* relative */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  justify-content: space-between;
+  /* justify-between */
+  padding: 1rem;
+  /* p-4 → 16px */
+  border-radius: 0.75rem;
+  /* rounded-xl → 12px */
+  border: 1px solid #e5e7eb;
+  /* border border-gray-200 */
+  background-color: #ffffff;
+  /* bg-white */
+  transition: all 0.2s ease-in-out;
+  /* transition */
+}
+
+/* Hover effect */
+.div17:hover {
+  border-color: #f97316;
+  /* hover:border-orange-500 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* hover:shadow-md */
+  background-color: #fff7ed;
+  /* hover:bg-orange-50 */
+}
+
+.div18 {
+  flex: 1 1 0%;
+  /* flex-1 */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  justify-content: space-between;
+  /* justify-between */
+  text-align: left;
+  /* text-left */
+  width: 100%;
+  /* w-full */
+}
+
+.div19 {
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  gap: 0.75rem;
+  /* space-x-3 → 12px */
+}
+
+.bg-gray-padded-rounded {
+  background-color: #f3f4f6;
+  /* bg-gray-100 */
+  padding: 0.5rem;
+  /* p-2 → 8px */
+  border-radius: 0.5rem;
+  /* rounded-lg → 8px */
+  transition: background-color 0.2s ease-in-out;
+  /* transition */
+}
+
+/* Hover khi parent có class 'group' */
+.group:hover .bg-gray-padded-rounded {
+  background-color: #ffffff;
+  /* group-hover:bg-white */
+}
+
+/* Lớp chính */
+.div20 {
+  background-color: #f3f4f6;
+  /* bg-gray-100 */
+  padding: 0.5rem;
+  /* p-2 → 8px */
+  border-radius: 0.5rem;
+  /* rounded-lg → 8px */
+  transition: all 0.2s ease-in-out;
+  /* transition */
+}
+
+/* Khi hover parent có class 'group' */
+.group:hover .div20 {
+  background-color: #ffffff;
+  /* group-hover:bg-white */
+}
+
+.div21 {
+  font-weight: 600;
+  /* font-semibold */
+  color: #1f2937;
+  /* text-gray-800 */
+}
+
+.div22 {
+  font-size: 0.875rem;
+  /* text-sm */
+  line-height: 1.25rem;
+  /* line-height mặc định cho text-sm */
+  color: #6b7280;
+  /* text-gray-500 */
+}
+
+.div23 {
+  font-weight: 700;
+  /* font-bold */
+  color: #111827;
+  /* text-gray-900 */
+  margin-right: 0.5rem;
+  /* mr-2 tương đương 8px */
+}
+
+.div24 {
+  margin-left: 0.5rem;
+  /* ml-2 tương đương 8px */
+  padding: 0.5rem;
+  /* p-2 tương đương 8px */
+  color: #f87171;
+  /* text-red-400 */
+  border-radius: 9999px;
+  /* rounded-full */
+  transition: background-color 0.2s, color 0.2s;
+  /* tạo hiệu ứng hover mượt */
+}
+
+.div24:hover {
+  background-color: #fef2f2;
+  /* hover:bg-red-50 */
+  color: #dc2626;
+  /* hover:text-red-600 */
+}
+
+.div25 {
+  width: 2rem;
+  /* w-8 tương đương 32px */
+  height: 2rem;
+  /* h-8 tương đương 32px */
+  border-radius: 9999px;
+  /* rounded-full */
+  background-color: #f3f4f6;
+  /* bg-gray-100 */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  justify-content: center;
+  /* justify-center */
+  transition: background-color 0.2s, color 0.2s;
+  /* transition */
+}
+
+.div25:hover {
+  background-color: #f97316;
+  /* hover:bg-orange-500 */
+  color: #ffffff;
+  /* hover:text-white */
+}
+
+.div26 {
+  grid-column: 1 / -1;
+  /* col-span-full */
+  text-align: center;
+  /* text-center */
+  padding-top: 2.5rem;
+  /* py-10 → padding-top: 2.5rem */
+  padding-bottom: 2.5rem;
+  /* py-10 → padding-bottom: 2.5rem */
+}
+
+.div27 {
+  color: #9ca3af;
+  /* text-gray-400 */
+  margin-bottom: 0.5rem;
+  /* mb-2 → margin-bottom: 0.5rem */
+}
+
+.div28 {
+  color: #2563eb;
+  /* text-blue-600 */
+  text-decoration: none;
+  /* mặc định không gạch chân */
+}
+
+.div28:hover {
+  text-decoration: underline;
+  /* hover:underline */
+}
+
+.div29 {
+  display: none;
+  /* hidden */
+  background-color: #ffffff;
+  /* bg-white */
+  border-radius: 1rem;
+  /* rounded-2xl = 16px */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  /* shadow-sm */
+  padding: 1.5rem;
+  /* p-6 = 24px */
+  border-width: 1px;
+  /* border */
+  border-color: #f3f4f6;
+  /* border-gray-100 */
+}
+
+/* Khi màn hình >= 1024px (lg) */
+@media (min-width: 1024px) {
+  .div29 {
+    display: block;
+    /* lg:block */
+  }
+}
+
+.div30 {
+  display: flex;
+  /* flex */
+  justify-content: space-between;
+  /* justify-between */
+  align-items: center;
+  /* items-center */
+  margin-bottom: 1rem;
+  /* mb-4 = 16px */
+}
+
+.div31 {
+  font-size: 1.125rem;
+  /* text-lg = 18px */
+  line-height: 1.75rem;
+  /* mặc định line-height của text-lg = 28px */
+  font-weight: 700;
+  /* font-bold */
+  color: #1f2937;
+  /* text-gray-800 */
+}
+
+.div32 {
+  font-size: 0.875rem;
+  /* text-sm = 14px */
+  line-height: 1.25rem;
+  /* line-height mặc định của text-sm = 20px */
+  background-color: #f3f4f6;
+  /* bg-gray-100 */
+  color: #374151;
+  /* text-gray-700 */
+  padding-left: 0.75rem;
+  /* px-3 */
+  padding-right: 0.75rem;
+  /* px-3 */
+  padding-top: 0.25rem;
+  /* py-1 */
+  padding-bottom: 0.25rem;
+  /* py-1 */
+  border-radius: 0.5rem;
+  /* rounded-lg = 8px */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  transition: all 0.2s ease-in-out;
+  /* transition */
+}
+
+.div32:hover {
+  background-color: #e5e7eb;
+  /* hover:bg-gray-200 */
+}
+
+.div33 {
+  display: grid;
+  /* grid */
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-cols-2: 2 cột bằng nhau */
+  gap: 1rem;
+  /* gap-4 = 16px */
+}
+
+.div34 {
+  display: flex;
+  /* flex */
+  justify-content: space-between;
+  /* justify-between */
+  align-items: center;
+  /* items-center */
+  padding: 0.75rem;
+  /* p-3 = 12px */
+  background-color: #f9fafb;
+  /* bg-gray-50 */
+  border-radius: 0.5rem;
+  /* rounded-lg = 8px */
+}
+
+.div35 {
+  font-weight: 500;
+  /* font-medium */
+  color: #374151;
+  /* text-gray-700 */
+}
+
+.div36 {
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  gap: 0.5rem;
+  /* space-x-2 (8px) */
+}
+
+.div37 {
+  font-size: 0.875rem;
+  /* text-sm */
+  line-height: 1.25rem;
+  /* Tailwind text-sm mặc định */
+  color: #6b7280;
+  /* text-gray-500 */
+}
+
+.div38 {
+  font-weight: 700;
+  /* font-bold */
+  color: #111827;
+  /* text-gray-900 */
+}
+
+.div39 {
+  font-size: 0.875rem;
+  /* text-sm */
+  line-height: 1.25rem;
+  /* line-height mặc định Tailwind cho text-sm */
+  color: #9ca3af;
+  /* text-gray-400 */
+}
+
+.div40 {
+  display: grid;
+  /* giả sử đang dùng trong grid layout */
+  grid-column: span 1 / span 1;
+  /* lg:col-span-1 -> span 1 cột trên màn hình lg trở lên */
+  row-gap: 1.5rem;
+  /* space-y-6 -> khoảng cách dọc giữa các phần tử con */
+}
+
+/* Tailwind lg breakpoint ~1024px trở lên */
+@media (min-width: 1024px) {
+  .div40 {
+    grid-column: span 1 / span 1;
+  }
+}
+
+.div41 {
+  background-color: #ffffff;
+  /* bg-white */
+  border-radius: 1rem;
+  /* rounded-2xl -> 16px */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* shadow-lg */
+  border-width: 2px;
+  /* border-2 */
+  border-color: #f97316;
+  /* border-orange-500 */
+  overflow: hidden;
+  /* overflow-hidden */
+  animation: fade-ins 0.5s ease-in-out forwards;
+  /* animate-fade-in */
+}
+
+/* Khai báo keyframes cho hiệu ứng fade-in */
+@keyframes fade-ins {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.div42 {
+  padding: 1rem;
+  /* p-4 -> 16px */
+  background-color: #fff7ed;
+  /* bg-orange-50 */
+  border-bottom-width: 1px;
+  /* border-b */
+  border-bottom-color: #ffedd5;
+  /* border-orange-100 */
+  display: flex;
+  /* flex */
+  justify-content: space-between;
+  /* justify-between */
+  align-items: center;
+  /* items-center */
+}
+
+.div43 {
+  font-weight: 700;
+  /* font-bold */
+  color: #c2410c;
+  /* text-orange-800 */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+}
+
+.div44 {
+  color: #d97706;
+  /* text-orange-600 */
+  font-weight: 700;
+  /* font-bold */
+}
+
+.div45 {
+  padding: 1rem;
+  /* p-4 tương đương 16px */
+}
+
+.div45>*+* {
+  margin-top: 0.5rem;
+  /* space-y-2 tương đương 8px giữa các phần tử con theo chiều dọc */
+}
+
+
+.div46 {
+  display: flex;
+  /* flex */
+  justify-content: space-between;
+  /* justify-between */
+  align-items: center;
+  /* items-center */
+  font-size: 0.875rem;
+  /* text-sm tương đương 14px */
+  line-height: 1.25rem;
+  /* mặc định line-height của text-sm */
+  padding-top: 0.5rem;
+  /* py-2 tương đương 8px */
+  padding-bottom: 0.5rem;
+  /* py-2 */
+  border-bottom: 1px solid #f9fafb;
+  /* border-b border-gray-50 */
+}
+
+/* last:border-0: phần tử cuối cùng không có border-bottom */
+.div46:last-child {
+  border-bottom: 0;
+}
+
+.div47 {
+  --tw-text-opacity: 1;
+  color: rgba(55, 65, 81, var(--tw-text-opacity));
+  /* #374151 */
+}
+
+.div48 {
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+}
+
+.div48>*+* {
+  margin-left: 0.75rem;
+  /* space-x-3 tương đương 12px */
+}
+
+.div49 {
+  font-weight: 500;
+  /* font-medium */
+  color: #111827;
+  /* text-gray-900 */
+}
+
+.div50 {
+  color: #9ca3af;
+  /* text-gray-400 */
+}
+
+.div50:hover {
+  color: #ef4444;
+  /* text-red-500 */
+}
+
+.div51 {
+  width: 100%;
+  /* w-full */
+  margin-top: 1rem;
+  /* mt-4 */
+  background-color: #ea580c;
+  /* bg-orange-600 */
+  color: #ffffff;
+  /* text-white */
+  font-weight: 700;
+  /* font-bold */
+  padding-top: 0.75rem;
+  /* py-3 */
+  padding-bottom: 0.75rem;
+  border-radius: 0.75rem;
+  /* rounded-xl */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  /* shadow-md approximation */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  justify-content: center;
+  /* justify-center */
+  gap: 0.5rem;
+  /* space-x-2 */
+  transition: all 0.2s ease-in-out;
+  /* transition */
+}
+
+.div51:hover {
+  background-color: #c2410c;
+  /* hover:bg-orange-700 */
+}
+
+.div51:disabled {
+  background-color: #d1d5db;
+  /* disabled:bg-gray-300 */
+  cursor: not-allowed;
+}
+
+.div52 {
+  background-color: #ffffff;
+  /* bg-white */
+  border-radius: 1rem;
+  /* rounded-2xl */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  /* shadow approximation */
+  border: 1px solid #fee2e2;
+  /* border + border-red-100 */
+  padding: 1rem;
+  /* p-4 */
+}
+
+.div53 {
+  font-weight: 700;
+  /* font-bold */
+  color: #1f2937;
+  /* text-gray-800 */
+  margin-bottom: 0.75rem;
+  /* mb-3 */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+}
+
+.div54> :not([hidden])~ :not([hidden]) {
+  margin-top: 0.75rem;
+  /* 3 * 0.25rem */
+}
+
+.div55 {
+  width: 100%;
+  /* w-full */
+  background-color: #eff6ff;
+  /* bg-blue-50 */
+  color: #2563eb;
+  /* text-blue-600 */
+  padding-top: 0.5rem;
+  /* py-2 */
+  padding-bottom: 0.5rem;
+  /* py-2 */
+  border-radius: 0.5rem;
+  /* rounded-lg */
+  font-weight: 500;
+  /* font-medium */
+  font-size: 0.875rem;
+  /* text-sm */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  justify-content: center;
+  /* justify-center */
+  transition: background-color 0.2s;
+  /* để hover mượt */
+}
+
+.div55:hover {
+  background-color: #dbeafe;
+  /* hover:bg-blue-100 */
+}
+
+.div56 {
+  width: 100%;
+  /* w-full */
+  background-color: #ffffff;
+  /* bg-white */
+  border-width: 1px;
+  /* border */
+  border-color: #fecaca;
+  /* border-red-200 */
+  color: #dc2626;
+  /* text-red-600 */
+  padding-top: 0.5rem;
+  /* py-2 */
+  padding-bottom: 0.5rem;
+  /* py-2 */
+  border-radius: 0.5rem;
+  /* rounded-lg */
+  font-weight: 500;
+  /* font-medium */
+  font-size: 0.875rem;
+  /* text-sm */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  justify-content: center;
+  /* justify-center */
+  transition: background-color 0.2s;
+  /* hover mượt */
+}
+
+.div56:hover {
+  background-color: #fef2f2;
+  /* hover:bg-red-50 */
+}
+
+.div57 {
+  background-color: #ffffff;
+  /* bg-white */
+  border-radius: 1rem;
+  /* rounded-2xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* shadow-lg */
+  border-width: 1px;
+  /* border */
+  border-color: #f3f4f6;
+  /* border-gray-100 */
+  overflow: hidden;
+  /* overflow-hidden */
+  display: flex;
+  /* flex */
+  flex-direction: column;
+  /* flex-col */
+  max-height: 60vh;
+  /* max-h-[60vh] */
+  position: sticky;
+  /* sticky */
+  top: 6rem;
+  /* top-24 tương đương 24 * 0.25rem = 6rem */
+}
+
+/* Responsive cho màn hình lg trở lên */
+@media (min-width: 1024px) {
+  .div57 {
+    max-height: calc(100vh - 16rem);
+    /* lg:max-h-[calc(100vh-16rem)] */
+  }
+}
+
+.div58 {
+  background-color: #1f2937;
+  /* bg-gray-800 */
+  color: #ffffff;
+  /* text-white */
+  display: flex;
+  /* flex */
+  justify-content: space-between;
+  /* justify-between */
+  align-items: center;
+  /* items-center */
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  /* transition-colors */
+  transition-duration: 150ms;
+  /* Tailwind mặc định */
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  /* Tailwind mặc định */
+}
+
+.div59 {
+  font-weight: 700;
+  /* font-bold */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+}
+
+.div60 {
+  text-align: right;
+  /* text-right */
+}
+
+.div61 {
+  font-size: 0.75rem;
+  /* text-xs */
+  line-height: 1rem;
+  /* mặc định line-height tương ứng với text-xs */
+  opacity: 0.7;
+  /* opacity-70 */
+}
+
+.div62 {
+  font-weight: 700;
+  /* font-bold */
+  font-size: 1.125rem;
+  /* text-lg */
+  line-height: 1.75rem;
+  /* line-height mặc định cho text-lg */
+}
+
+.div63 {
+  flex: 1 1 0%;
+  /* flex-1 */
+  overflow-y: auto;
+  /* overflow-y-auto */
+  padding: 1rem;
+  /* p-4 (16px) */
+}
+
+/* space-y-3 áp dụng margin-top cho tất cả các phần tử con, trừ phần tử đầu tiên */
+.div63>*+* {
+  margin-top: 0.75rem;
+  /* space-y-3 (12px) */
+}
+
+.div64 {
+  display: flex;
+  /* flex */
+  justify-content: center;
+  /* justify-center */
+  padding-top: 2rem;
+  /* py-8 → 32px / 16px * 2rem */
+  padding-bottom: 2rem;
+  /* py-8 */
+}
+
+.div65 {
+  height: 2rem;
+  /* h-8 → 32px / 16px * 2rem */
+  width: 2rem;
+  /* w-8 → 32px */
+  border-bottom-width: 2px;
+  /* border-b-2 */
+  border-bottom-color: #f97316;
+  /* border-orange-500 */
+  border-radius: 9999px;
+  /* rounded-full */
+  animation: spins 1s linear infinite;
+  /* animate-spin */
+}
+
+/* keyframes cho hiệu ứng spin */
+@keyframes spins {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.div66 {
+  text-align: center;
+  /* text-center */
+  padding-top: 2.5rem;
+  /* py-10 → 40px */
+  padding-bottom: 2.5rem;
+  /* py-10 → 40px */
+  color: #9ca3af;
+  /* text-gray-400 */
+}
+
+.div67 {
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  justify-content: space-between;
+  /* justify-between */
+  padding: 0.75rem;
+  /* p-3 → 12px */
+  border-radius: 0.5rem;
+  /* rounded-lg → 8px */
+  border-width: 1px;
+  /* border */
+  border-style: solid;
+  /* border */
+  border-color: #fed7aa;
+  /* border-orange-200 */
+  background-color: #fff7ed;
+  /* bg-orange-50 */
+}
+
+.div68 {
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  justify-content: space-between;
+  /* justify-between */
+  padding: 0.75rem;
+  /* p-3 → 12px */
+  border-radius: 0.5rem;
+  /* rounded-lg → 8px */
+  border-width: 1px;
+  /* border */
+  border-style: solid;
+  /* border */
+  border-color: #f3f4f6;
+  /* border-gray-100 */
+  background-color: #ffffff;
+  /* bg-white */
+}
+
+.div69 {
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  gap: 0.75rem;
+  /* space-x-3 → 12px giữa các phần tử con theo chiều ngang */
+}
+
+.div70 {
+  width: 2rem;
+  /* w-8 → 32px */
+  height: 2rem;
+  /* h-8 → 32px */
+  border-radius: 9999px;
+  /* rounded-full → tròn hoàn toàn */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  justify-content: center;
+  /* justify-center */
+  font-size: 0.75rem;
+  /* text-xs → 12px */
+  font-weight: 700;
+  /* font-bold */
+  background-color: #fed7aa;
+  /* bg-orange-200 → màu Tailwind tương ứng */
+  color: #c05621;
+  /* text-orange-700 → màu Tailwind tương ứng */
+}
+
+.div71 {
+  width: 2rem;
+  /* w-8 → 32px */
+  height: 2rem;
+  /* h-8 → 32px */
+  border-radius: 9999px;
+  /* rounded-full → tròn hoàn toàn */
+  display: flex;
+  /* flex */
+  align-items: center;
+  /* items-center */
+  justify-content: center;
+  /* justify-center */
+  font-size: 0.75rem;
+  /* text-xs → 12px */
+  font-weight: 700;
+  /* font-bold */
+  background-color: #e5e7eb;
+  /* bg-gray-200 → màu Tailwind tương ứng */
+  color: #4b5563;
+  /* text-gray-600 → màu Tailwind tương ứng */
+}
+
+.div72 {
+  font-weight: 500;
+  /* font-medium */
+  color: #1f2937;
+  /* text-gray-800 → màu Tailwind tương ứng */
+  font-size: 0.875rem;
+  /* text-sm → 14px */
+  line-height: 1.25rem;
+  /* line-height mặc định của text-sm Tailwind */
+}
